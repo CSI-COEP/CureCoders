@@ -25,7 +25,7 @@ const Footer = () => {
                             <Link to="/">X-Beat</Link>
                         </h2>
                         <div className="foot_subs">
-                            <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p>
+                            <p>Subscribe to our Email alerts to receive early discount offers, and new tourism info.</p>
                             <form onSubmit={handleSubmit}>
                                 <input
                                     type="email"
