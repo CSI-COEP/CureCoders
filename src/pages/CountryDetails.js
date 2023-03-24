@@ -6,32 +6,29 @@ import ProductCard from "../components/product/ProductCard";
 import Services from "../components/common/Services";
 import filtersContext from "../contexts/filters/filtersContext";
 import EmptyView from "../components/common/EmptyView";
-import LocCard from "../components/product/LocCard";
+import PlaceCard from "../components/product/PlaceCard";
 import { useParams } from "react-router-dom";
-const AllProducts = () => {
+const CountryDetails = () => {
   useDocTitle("All Products");
 
-  // const { allProducts } = useContext(filtersContext);
   const { demo } = useContext(filtersContext);
- 
-  
+  const { countryId } = useParams();
+
   return (
     <>
       <section id="all_products" className="section">
         <FilterBar />
         <div className="container">
-          {demo.length ? (
+          {demo.length > 0 ? (
             <div className="wrapper products_wrapper">
-              {demo.map((item) => (
-                <LocCard key={item.id} {...item} />
+              {demo[countryId - 1].locations.map((item) => (
+                <PlaceCard key={item.id} {...item} />
               ))}
             </div>
           ) : (
             <EmptyView icon={<BsExclamationCircle />} msg="No Results Found" />
           )}
         </div>
-
-       
       </section>
 
       <Services />
@@ -39,4 +36,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default CountryDetails;

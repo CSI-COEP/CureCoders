@@ -4,13 +4,14 @@ const Data = [
         name: "India",
         description: "I love India",
         heroImage: "https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg",
+        continent: "Asia",
         locations: [
             {
                 id: 1,
                 name: "Taj-Mahal",
                 cityName: "Agra",
                 state: "Uttar Pradesh",
-                Description: "",
+                Description: "This is the most famous in Agra",
                 imageUrl: "https://www.planetware.com/photos-large/IND/india-top-attractions-taj-mahal.jpg",
                 category: "Culture&Heritage",
                 rating: 0,
@@ -238,6 +239,7 @@ const Data = [
         name: "France",
         description: "",
         heroImage: "",
+        continent:"Europe",
         locations: [
             {
                 id: 1,
@@ -476,6 +478,7 @@ const Data = [
         name: "Australia",
         description: "",
         heroImage: "",
+        continent:"Australia",
         locations: [
             {
                 id: 1,
@@ -645,7 +648,8 @@ const Data = [
         name: "Greece",
         description: "",
         heroImage: "",
-        locartions: [
+        continent:"Europe",
+        locations: [
             {
                 id: 1,
                 name: "Acropolis",
@@ -837,6 +841,7 @@ const Data = [
         name: "Switzerland",
         description: "",
         heroImage: "",
+        continent:"Europe",
         locations: [
             {
                 id: 1,
@@ -1075,6 +1080,7 @@ const Data = [
         name:"Canada",
         description:"",
         heroImage:"",
+        continent:"North America",
         locations: [
             {
                 id: 1,
@@ -1290,6 +1296,7 @@ const Data = [
         name:"Spain",
         description:"",
         heroImage:"",
+        continent:"Europe",
         locations: [
             {
                 id: 1,
@@ -1505,6 +1512,7 @@ const Data = [
         name:"United States",
         description:"",
         heroImage:"",
+        continent:"North America",
         locations:[
             {
                 id: 1,
@@ -1697,6 +1705,7 @@ const Data = [
         name:"China",
         description:"",
         heroImage:"",
+        continent:"Asia",
         locations: [
             {
                 id: 1,
@@ -1889,6 +1898,7 @@ const Data = [
         name:"Germany",
         description:"",
         heroImage:"",
+        continent:"Europe",
         locations: [
             {
                 id: 1,

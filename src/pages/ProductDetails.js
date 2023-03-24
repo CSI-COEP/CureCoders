@@ -8,7 +8,7 @@ import cartContext from '../contexts/cart/cartContext';
 import productsData from '../data/productsData';
 import SectionsHead from '../components/common/SectionsHead';
 import RelatedSlider from '../components/sliders/RelatedSlider';
-import ProductSummary from '../components/product/ProductSummary';
+import ProductSummary from '../components/product/LocationSummary';
 import Services from '../components/common/Services';
 
 

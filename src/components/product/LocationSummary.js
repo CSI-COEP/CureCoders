@@ -4,7 +4,7 @@ import useActive from '../../hooks/useActive';
 import ProductReviews from './ProductReviews';
 
 
-const ProductSummary = (props) => {
+const LocationSummary = (props) => {
 
     const { brand, title, info, category, type, connectivity } = props;
 
@@ -23,19 +23,19 @@ const ProductSummary = (props) => {
                                 className={`tabs_item ${activeClass('specs')}`}
                                 onClick={() => handleActive('specs')}
                             >
-                                Specifications
+                               Overview
                             </li>
                             <li
                                 className={`tabs_item ${activeClass('overview')}`}
                                 onClick={() => handleActive('overview')}
                             >
-                                Overview
+                                Accomodation
                             </li>
                             <li
                                 className={`tabs_item ${activeClass('reviews')}`}
                                 onClick={() => handleActive('reviews')}
                             >
-                                Reviews
+                                Journey
                             </li>
                         </ul>
                     </div>
@@ -47,52 +47,45 @@ const ProductSummary = (props) => {
                                 <div className="prod_specs">
                                     <ul>
                                         <li>
-                                            <span>Brand</span>
+                                            <span>Name</span>
                                             <span>{brand}</span>
                                         </li>
                                         <li>
-                                            <span>Model</span>
+                                            <span>City</span>
                                             <span>{title}</span>
                                         </li>
                                         <li>
-                                            <span>Generic Name</span>
+                                            <span>State</span>
                                             <span>{category}</span>
                                         </li>
                                         <li>
-                                            <span>Headphone Type</span>
+                                            <span> Type</span>
                                             <span>{type}</span>
                                         </li>
                                         <li>
-                                            <span>Connectivity</span>
+                                            <span>Famous Spots</span>
                                             <span>{connectivity}</span>
                                         </li>
                                         <li>
-                                            <span>Microphone</span>
+                                            <span>About </span>
                                             <span>Yes</span>
                                         </li>
                                     </ul>
                                 </div>
                             ) : active === 'overview' ? (
                                 <div className="prod_overview">
-                                    <h3>The <span>{title}</span> {info} provides with fabulous sound quality</h3>
+                                    
                                     <ul>
-                                        <li>Sound Tuned to Perfection</li>
-                                        <li>Comfortable to Wear</li>
-                                        <li>Long Hours Playback Time</li>
+                                        <li>Stay Safe</li>
+                                        <li>Comfortable Hotels</li>
+                                        <li>24/7 services</li>
                                     </ul>
-                                    <p>Buy the <b>{title} {info}</b> which offers you with fabulous music experience by providing you with awesome sound quality that you can never move on from. Enjoy perfect flexibility and mobility with amazing musical quality with these {category} giving you a truly awesome audio experience. It blends with exceptional sound quality and a range of smart features for an unrivalled listening experience.</p>
+                                    <p>Your hotels are going to add here by using external api for your service</p>
                                 </div>
                             ) : (
                                 <div className="prod_reviews">
                                     <ul>
-                                        {
-                                            reviewsData.map(item => (
-                                                <ProductReviews
-                                                    key={item.id}
-                                                    {...item}
-                                                />
-                                            ))
-                                        }
+                                      This is your E-Guide who will bw your partner in your jounrey 
                                     </ul>
                                 </div>
                             )
@@ -107,4 +100,4 @@ const ProductSummary = (props) => {
     );
 };
 
-export default ProductSummary;
+export default LocationSummary;

@@ -1,40 +1,40 @@
 export const sortMenu = [
     {
         id: 1,
-        title: "Latest",
+        title: "Asia",
     },
     {
         id: 2,
-        title: "Featured",
+        title: "Africa",
     },
     {
         id: 3,
-        title: "Top Rated",
+        title: "North America",
     },
     {
         id: 4,
-        title: "Price(Lowest First)",
+        title: "Europe",
     },
     {
         id: 5,
-        title: "Price(Highest First)"
+        title: "Australia"
     },
 ];
 
 export const brandsMenu = [
     {
         id: 1,
-        label: "JBL",
+        label: "Asia",
         checked: false,
     },
     {
         id: 2,
-        label: "BoAt",
+        label: "Africa",
         checked: false,
     },
     {
         id: 3,
-        label: "Sony",
+        label: "Europe",
         checked: false,
     },
 ];

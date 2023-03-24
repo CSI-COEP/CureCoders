@@ -5,21 +5,25 @@ import { displayMoney } from "../../helpers/utils";
 import cartContext from "../../contexts/cart/cartContext";
 import useActive from "../../hooks/useActive";
 
-const LocCard = (props) => {
-  const { id, name, description, heroImage } = props;
+const PlaceCard = (props) => {
+  const { id, name,cityName ,state , description, imageUrl , category } = props;
   
   return (
     <>
       <div className="card products_card">
         <figure className="products_img">
-          <Link to={`country-details/${id}`}>
-            <img src={heroImage} alt="product-img" style={{height:"200px" ,width:"200px"}} />
+          <Link to={`place-details/${id}`}  state={props}>
+            <img src={imageUrl} alt="product-img" style={{height:"200px" ,width:"200px"}} />
           </Link>
         </figure>
         <div className="products_details">
           <h3 className="products_title">
-            <Link to={`country-details/${id}`}>{name}</Link>
+            <Link to={`place-details/${id}`}>{name}</Link>
           </h3>
+          <h4>{cityName} ,{state && <span>{state}</span>}</h4>
+         
+          <div className="separator"></div>
+
           <h5 className="products_info">{description}</h5>
           <div className="separator"></div>
         </div>
@@ -28,4 +32,4 @@ const LocCard = (props) => {
   );
 };
 
-export default LocCard;
+export default PlaceCard;

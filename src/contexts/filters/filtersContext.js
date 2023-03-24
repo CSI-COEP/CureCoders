@@ -59,29 +59,29 @@ const FiltersProvider = ({ children }) => {
     /* function for applying Filters - (sorting & filtering) */
     const applyFilters = () => {
 
-        let updatedProducts = [...productsData];
+        let updatedProducts = [...Data];
 
         /*==== Sorting ====*/
         if (state.sortedValue) {
             switch (state.sortedValue) {
-                case 'Latest':
-                    updatedProducts = updatedProducts.slice(0, 6).map(item => item);
+                case 'Asia':
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Asia'));
                     break;
 
-                case 'Featured':
-                    updatedProducts = updatedProducts.filter(item => item.tag === 'featured-product');
+                case 'Africa':
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Africa'));
                     break;
 
-                case 'Top Rated':
-                    updatedProducts = updatedProducts.filter(item => item.rateCount > 4);
+                case 'North America':
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('North America'));
                     break;
 
-                case 'Price(Lowest First)':
-                    updatedProducts = updatedProducts.sort((a, b) => a.finalPrice - b.finalPrice);
+                case 'Europe':
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Europe'));
                     break;
 
-                case 'Price(Highest First)':
-                    updatedProducts = updatedProducts.sort((a, b) => b.finalPrice - a.finalPrice);
+                case 'Australia':
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Australia'));
                     break;
 
                 default:
@@ -97,7 +97,7 @@ const FiltersProvider = ({ children }) => {
         }).map(item => item.label.toLowerCase());
 
         if (checkedBrandItems.length) {
-            updatedProducts = updatedProducts.filter(item => checkedBrandItems.includes(item.brand.toLowerCase()));
+            updatedProducts = updatedProducts.filter(item => checkedBrandItems.includes(item.continent.toLowerCase()));
         }
 
         // filter by Category

@@ -58,7 +58,7 @@ const TopProducts = () => {
                     ))
                 }
                 <div className="card products_card browse_card">
-                    <Link to="/all-products">
+                    <Link to="/all-locations">
                         Browse All <br /> Products <BsArrowRight />
                     </Link>
                 </div>
