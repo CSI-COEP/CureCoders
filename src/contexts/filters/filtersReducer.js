@@ -3,11 +3,12 @@ const filtersReducer = (state, action) => {
 
         case 'LOAD_ALL_PRODUCTS':
 
-            const { products, minPrice, maxPrice } = action.payload;
+            const { prod ,products, minPrice, maxPrice } = action.payload;
 
             return {
                 ...state,
                 allProducts: products,
+                demo : prod ,
                 selectedPrice: {
                     ...state.selectedPrice,
                     price: maxPrice,

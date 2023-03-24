@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer } from 'react';
 import productsData from '../../data/productsData';
 import { brandsMenu, categoryMenu } from '../../data/filterBarData';
 import filtersReducer from './filtersReducer';
-
+import Data from '../../data/Data'
 // Filters-Context
 const filtersContext = createContext();
 
@@ -10,6 +10,7 @@ const filtersContext = createContext();
 // Initial State
 const initialState = {
     allProducts: [],
+    demo:[],
     sortedValue: null,
     updatedBrandsMenu: brandsMenu,
     updatedCategoryMenu: categoryMenu,
@@ -27,16 +28,19 @@ const initialState = {
 
 // Filters-Provider Component
 const FiltersProvider = ({ children }) => {
-
+     console.log("inside context")
     const [state, dispatch] = useReducer(filtersReducer, initialState);
-
+       console.log(initialState);
 
     /* Loading All Products on the initial render */
     useEffect(() => {
 
         // making a shallow copy of the original products data, because we should never mutate the orginal data.
         const products = [...productsData];
-
+        const prod = [...Data];
+        // const products = [...Data];
+        console.log("product array")
+        console.log(prod)
         // finding the Max and Min Price, & setting them into the state.
         const priceArr = products.map(item => item.finalPrice);
         const minPrice = Math.min(...priceArr);
@@ -44,9 +48,11 @@ const FiltersProvider = ({ children }) => {
 
         dispatch({
             type: 'LOAD_ALL_PRODUCTS',
-            payload: { products, minPrice, maxPrice }
+            payload: {prod, products, minPrice, maxPrice }
         });
-
+        console.log("after dispatch")
+        console.log(initialState.allProducts);
+        console.log(initialState.demo);
     }, []);
 
 
