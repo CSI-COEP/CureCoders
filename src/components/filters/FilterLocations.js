@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import filtersContext from '../../contexts/filters/filtersContext';
-import { sortMenu,sortMenu2 } from '../../data/filterBarData';
+import { sortMenu } from '../../data/filterBarData';
 import { displayMoney } from '../../helpers/utils';
 
 
@@ -58,7 +58,7 @@ const FilterBarOptions = () => {
 
                 <ul className="sort_menu">
                     {
-                        sortMenu2.map(item => {
+                        sortMenu.map(item => {
                             const { id, title } = item;
                             return (
                                 <li

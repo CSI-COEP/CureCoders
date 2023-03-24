@@ -65,6 +65,7 @@ const FiltersProvider = ({ children }) => {
         if (state.sortedValue) {
             switch (state.sortedValue) {
                 case 'Asia':
+<<<<<<< HEAD
                     updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Asia".toLowerCase());
                     break;
 
@@ -82,40 +83,61 @@ const FiltersProvider = ({ children }) => {
 
                 case 'Australia':
                     updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Australia".toLowerCase());
+=======
+                    updatedProducts = updatedProducts.filter(item => item.continent.toLowerCase()==="Asia".toLowerCase());
+                    break;
+
+                case 'Africa':
+                    updatedProducts = updatedProducts.filter(item => item.continent.toLowerCase()==="Africa".toLowerCase());
+                    break;
+
+                case 'North America':
+                    updatedProducts = updatedProducts.filter(item => item.continent.toLowerCase()==="North America".toLowerCase());
+                    break;
+
+                case 'Europe':
+                    updatedProducts = updatedProducts.filter(item => item.continent.toLowerCase()==="Europe".toLowerCase());
+                    break;
+
+                case 'Australia':
+                    updatedProducts = updatedProducts.filter(item => item.continent.toLowerCase()==="Australia".toLowerCase());
+>>>>>>> 7441ec675986cf7c4da36296cbca070f223123b4
                     break;
 
                 default:
                     throw new Error('Wrong Option Selected');
             }
         }
+        
 
         /*==== Filtering ====*/
 
         // filter by Brands
-        const checkedBrandItems = state.updatedBrandsMenu.filter(item => {
-            return item.checked;
-        }).map(item => item.label.toLowerCase());
+        // const checkedBrandItems = state.updatedBrandsMenu.filter(item => {
+        //     return item.checked;
+        // }).map(item => item.label.toLowerCase());
 
-        if (checkedBrandItems.length) {
-            updatedProducts = updatedProducts.filter(item => checkedBrandItems.includes(item.continent.toLowerCase()));
-        }
+        // if (checkedBrandItems.length) {
+        //     updatedProducts = updatedProducts.filter(item => checkedBrandItems.includes(item.continent.toLowerCase()));
+        // }
 
-        // filter by Category
-        const checkedCategoryItems = state.updatedCategoryMenu.filter(item => {
-            return item.checked;
-        }).map(item => item.label.toLowerCase());
+        // // filter by Category
+        // const checkedCategoryItems = state.updatedCategoryMenu.filter(item => {
+        //     return item.checked;
+        // }).map(item => item.label.toLowerCase());
 
-        if (checkedCategoryItems.length) {
-            updatedProducts = updatedProducts.filter(item => checkedCategoryItems.includes(item.category.toLowerCase()));
-        }
+        // if (checkedCategoryItems.length) {
+        //     updatedProducts = updatedProducts.filter(item => checkedCategoryItems.includes(item.category.toLowerCase()));
+        // }
 
-        // filter by Price
-        if (state.selectedPrice) {
-            updatedProducts = updatedProducts.filter(item => {
-                return item.finalPrice <= state.selectedPrice.price;
-            });
-        }
+        // // filter by Price
+        // if (state.selectedPrice) {
+        //     updatedProducts = updatedProducts.filter(item => {
+        //         return item.finalPrice <= state.selectedPrice.price;
+        //     });
+        // }
 
+        
         dispatch({
             type: 'FILTERED_PRODUCTS',
             payload: { updatedProducts }
@@ -125,6 +147,7 @@ const FiltersProvider = ({ children }) => {
     useEffect(() => {
         applyFilters();
         // eslint-disable-next-line react-hooks/exhaustive-deps
+        // console.log("filter applied");
     }, [state.sortedValue, state.updatedBrandsMenu, state.updatedCategoryMenu, state.selectedPrice]);
 
 
@@ -137,42 +160,42 @@ const FiltersProvider = ({ children }) => {
         });
     };
 
-    const handleBrandsMenu = (id) => {
-        return dispatch({
-            type: 'CHECK_BRANDS_MENU',
-            payload: { id }
-        });
-    };
+    // const handleBrandsMenu = (id) => {
+    //     return dispatch({
+    //         type: 'CHECK_BRANDS_MENU',
+    //         payload: { id }
+    //     });
+    // };
 
-    const handleCategoryMenu = (id) => {
-        return dispatch({
-            type: 'CHECK_CATEGORY_MENU',
-            payload: { id }
-        });
-    };
+    // const handleCategoryMenu = (id) => {
+    //     return dispatch({
+    //         type: 'CHECK_CATEGORY_MENU',
+    //         payload: { id }
+    //     });
+    // };
 
-    const handlePrice = (event) => {
-        const value = event.target.value;
+    // const handlePrice = (event) => {
+    //     const value = event.target.value;
 
-        return dispatch({
-            type: 'HANDLE_PRICE',
-            payload: { value }
-        });
-    };
+    //     return dispatch({
+    //         type: 'HANDLE_PRICE',
+    //         payload: { value }
+    //     });
+    // };
 
-    const handleMobSortVisibility = (toggle) => {
-        return dispatch({
-            type: 'MOB_SORT_VISIBILITY',
-            payload: { toggle }
-        });
-    };
+    // const handleMobSortVisibility = (toggle) => {
+    //     return dispatch({
+    //         type: 'MOB_SORT_VISIBILITY',
+    //         payload: { toggle }
+    //     });
+    // };
 
-    const handleMobFilterVisibility = (toggle) => {
-        return dispatch({
-            type: 'MOB_FILTER_VISIBILITY',
-            payload: { toggle }
-        });
-    };
+    // const handleMobFilterVisibility = (toggle) => {
+    //     return dispatch({
+    //         type: 'MOB_FILTER_VISIBILITY',
+    //         payload: { toggle }
+    //     });
+    // };
 
     const handleClearFilters = () => {
         return dispatch({
@@ -185,11 +208,11 @@ const FiltersProvider = ({ children }) => {
     const values = {
         ...state,
         setSortedValue,
-        handleBrandsMenu,
-        handleCategoryMenu,
-        handlePrice,
-        handleMobSortVisibility,
-        handleMobFilterVisibility,
+        // handleBrandsMenu,
+        // handleCategoryMenu,
+        // handlePrice,
+        // handleMobSortVisibility,
+        // handleMobFilterVisibility,
         handleClearFilters,
     };
 

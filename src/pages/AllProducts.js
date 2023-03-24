@@ -13,6 +13,8 @@ const AllProducts = () => {
 
   // const { allProducts } = useContext(filtersContext);
   const { demo } = useContext(filtersContext);
+  console.log("demo")
+  console.log(demo)
  
   
   return (
