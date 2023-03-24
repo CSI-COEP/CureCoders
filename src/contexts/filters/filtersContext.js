@@ -65,23 +65,23 @@ const FiltersProvider = ({ children }) => {
         if (state.sortedValue) {
             switch (state.sortedValue) {
                 case 'Asia':
-                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Asia'));
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Asia".toLowerCase());
                     break;
 
                 case 'Africa':
-                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Africa'));
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Africa".toLowerCase());
                     break;
 
                 case 'North America':
-                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('North America'));
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="North America".toLowerCase());
                     break;
 
                 case 'Europe':
-                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Europe'));
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Europe".toLowerCase());
                     break;
 
                 case 'Australia':
-                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()===toLowerCase('Australia'));
+                    updatedProducts = updatedProducts.map(item => item.continent.toLowerCase()==="Australia".toLowerCase());
                     break;
 
                 default:

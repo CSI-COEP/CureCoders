@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { footMenu, footSocial } from '../../data/footerData';
-
+import tpd from '../../styles/travelpedia.png'
 
 const Footer = () => {
 
@@ -22,7 +22,7 @@ const Footer = () => {
                 <div className="wrapper footer_wrapper">
                     <div className="foot_about">
                         <h2>
-                            <Link to="/">X-Beat</Link>
+                        <Link to="/"><img src={tpd} alt="" style={{height: "80px" , width: "120px"}}/></Link>
                         </h2>
                         <div className="foot_subs">
                             <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p>
@@ -72,8 +72,8 @@ const Footer = () => {
                     <div className="sub_footer_wrapper">
                         <div className="foot_copyright">
                             <p>
-                                {currYear} | XBeat. All Rights Reserved.
-                                Built by | <a href="https://gulshansongara.netlify.app/">Gulshan Songara</a>
+                                {currYear} | TravelPedia. All Rights Reserved.
+                                Built by | <a href="#">CureCoders</a>
                             </p>
                         </div>
                         <div className="foot_social">

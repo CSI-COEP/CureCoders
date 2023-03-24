@@ -42,11 +42,11 @@ const HeroSlider = () => {
                             <div className="hero_item_txt">
                                 <h3>{title}</h3>
                                 <h1>{tagline}</h1>
-                                <h2 className="hero_price">
+                                {/* <h2 className="hero_price">
                                     {newPrice} &nbsp;
                                     <small><del>{oldPrice}</del></small>
-                                </h2>
-                                <Link to={`all-locations`} className="btn">Shop Now</Link>
+                                </h2> */}
+                                <Link to={`all-locations`} className="btn">Show More</Link>
                             </div>
                             <figure className="hero_item_img">
                                 <img src={heroImage} alt="product-img" />

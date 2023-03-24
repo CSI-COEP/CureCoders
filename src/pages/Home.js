@@ -14,12 +14,12 @@ const Home = () => {
                 <HeroSlider />
             </section>
 
-            <section id="featured" className="section">
+            {/* <section id="featured" className="section">
                 <div className="container">
                     <SectionsHead heading="Featured Products" />
                     <FeaturedSlider />
                 </div>
-            </section>
+            </section> */}
 
             <section id="products" className="section">
                 <div className="container">

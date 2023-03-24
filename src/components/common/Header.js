@@ -6,7 +6,7 @@ import commonContext from '../../contexts/common/commonContext';
 import cartContext from '../../contexts/cart/cartContext';
 import AccountForm from '../form/AccountForm';
 import SearchBar from './SearchBar';
-
+import tpd from '../../styles/travelpedia.png'
 
 const Header = () => {
 
@@ -36,7 +36,8 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <h2 className="nav_logo">
-                            <Link to="/">X-Beat</Link>
+                            {/* <Link to="/">X-Beat</Link> */}
+                            <Link to="/"><img src={tpd} alt="" style={{height: "80px" , width: "120px"}}/></Link>
                         </h2>
                         <nav className="nav_actions">
                             <div className="search_action">
